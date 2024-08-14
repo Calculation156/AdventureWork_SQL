@@ -1,4 +1,5 @@
 USE AdventureWorks2022
+--Query 1: How many resellers and internet customers are there?
 --Calculate the number of resellers and individual Customers
 WITH AA AS(
 SELECT
@@ -24,7 +25,7 @@ LEFT JOIN AB AS p2 ON p1.Year=p2.Year
 ORDER BY p1.Year ASC
 
 
-
+--Query 2: Revenue from internet and resellers customers
 --Calculate percentage of revenue from resellers customers
 WITH 
 ----Calculate revenue from Internet sales
