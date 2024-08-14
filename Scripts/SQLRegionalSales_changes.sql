@@ -1,3 +1,4 @@
+--Calculate revenue of each year
 WITH YR AS (
 SELECT 
 	YEAR(OrderDate) AS 'Year',
@@ -5,6 +6,7 @@ SELECT
 FROM Sales.SalesOrderHeader
 GROUP BY YEAR(OrderDate)
 ),
+--Calculate revenue of each regions in each years
 RS AS (
 SELECT
 	ter.Name,
@@ -15,6 +17,7 @@ FROM Sales.SalesOrderHeader AS SOH
 LEFT JOIN Sales.SalesTerritory AS ter ON SOH.TerritoryID = ter.TerritoryID
 GROUP BY ter.Name,ter.CountryRegionCode,YEAR(SOH.OrderDate)
 ),
+--Calculate annual rev growth rate for each region
 RS2 AS (
 SELECT
 	cur.name,
@@ -25,6 +28,7 @@ SELECT
 FROM RS AS cur
 LEFT JOIN RS AS pre ON (cur.Year= pre.Year + 1) AND (cur.Name = pre.Name)
 )
+--Completed results
 SELECT
 	RS2.Name,
 	RS2.CountryRegionCode,
