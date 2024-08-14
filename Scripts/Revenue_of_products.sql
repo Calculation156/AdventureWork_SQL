@@ -1,3 +1,6 @@
+--This query calculate annual revenue for each products, including category and subcategory.
+--This data will be import to spreadsheet or visualization program for analyzing sales
+
 --Calculate revenue of each product
 WITH T1 AS (
 SELECT
