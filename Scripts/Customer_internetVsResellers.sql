@@ -68,7 +68,7 @@ SELECT
 FROM T2 AS preYear
 LEFT JOIN T2 AS currentYear ON preYear.year+1=currentYear.Year
 )
-----Combine
+--Completed results
 SELECT
         T1a.Year AS 'Year',
         T1a.SalesInternet,
