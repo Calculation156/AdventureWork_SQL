@@ -32,7 +32,7 @@ FROM T1
 LEFT JOIN T2 ON T1.ProductID = T2.ProductID
 GROUP BY T2.Category,T1.Month,T1.Year
 )
---Calculate monthly growth rate
+--Add a column for monthly growth rate
 SELECT 
 	cur.Category,
 	cur.Month,
