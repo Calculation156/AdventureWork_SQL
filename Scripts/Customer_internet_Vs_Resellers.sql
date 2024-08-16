@@ -58,6 +58,7 @@ FROM Sales.SalesOrderHeader
 WHERE SalesPersonID IS NOT NULL
 GROUP BY YEAR(OrderDate)
 ),
+----Calculate growth rate of revenue from resellers sales
 T2a AS(
 SELECT
 	currentYear.Year AS 'Year',
